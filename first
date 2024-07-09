@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Care System for Boys</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+        section {
+            padding: 20px;
+        }
+        .content {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        .paypal-button, .instagram-button, .download-button {
+            margin-top: 20px;
+        }
+        .images {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .images img {
+            max-width: 45%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .images .before, .images .after {
+            text-align: center;
+        }
+        .social-buttons {
+            margin-top: 20px;
+        }
+        .social-buttons a {
+            margin: 0 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+    </style>
+    <script>
+        function showPayment() {
+            document.getElementById('payment-section').classList.remove('hidden');
+            document.getElementById('payment-section').classList.add('visible');
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Achieve Your Best Look with Our Ultimate Face Care System for Boys</h1>
+</header>
+
+<section>
+    <div id="google_translate_element"></div>
+    <div class="content">
+        <h2>Transform Your Appearance with Our Comprehensive Guide</h2>
+        <p>Unlock the secrets to a better facial structure and healthier skin with our all-inclusive Face Care System. Designed specifically for boys, our guide provides effective exercises, tailored diet plans, and expert care routines to help you look and feel your best. Transform your appearance and boost your confidence with our proven methods.</p>
+
+        <div class="images">
+            <div class="before">
+                <h3>Before</h3>
+                <img src="Before.PNG" alt="Before">
+            </div>
+            <div class="after">
+                <h3>After</h3>
+                <img src="After.PNG" alt="After">
+            </div>
+        </div>
+
+        <div class="social-buttons">
+            <a href="https://www.instagram.com/facem_ew?igsh=MWhsa215MGtsZGM2eg==" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="50" height="50">
+            </a>
+        </div>
+
+        <button class="download-button" onclick="showPayment()">Download Now</button>
+    </div>
+</section>
+
+<section id="payment-section" class="content hidden">
+    <h2>Payment Required</h2>
+    <p>You need to pay $5 to download the guide.</p>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="yassinelamachi16@gmail.com">
+        <input type="hidden" name="item_name" value="Face Care System for Boys">
+        <input type="hidden" name="amount" value="5.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="return" value="http://yourwebsite.com/success.html">
+        <input type="hidden" name="cancel_return" value="http://yourwebsite.com/cancel.html">
+        <input type="hidden" name="notify_url" value="http://yourwebsite.com/ipn.php">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" class="paypal-button">
+    </form>
+</section>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
