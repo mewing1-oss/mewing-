@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mewing - Face Care System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+        section {
+            padding: 20px;
+        }
+        .content {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        .paypal-button {
+            margin-top: 20px;
+        }
+        .images {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .images img {
+            max-width: 45%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .images .before, .images .after {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Mewing - Face Care System</h1>
+</header>
+
+<section>
+    <div id="google_translate_element"></div>
+    <div class="content">
+        <h2>Get the Ultimate Face Care Guide for Boys</h2>
+        <p>Improve your facial structure and skin with our comprehensive guide. Includes exercises, diet plans, and care routines to achieve your goals.</p>
+        <p><strong>Price: $5</strong></p>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="B5G98XE5DKQPL" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" class="paypal-button" />
+        </form>
+
+        <div class="images">
+            <div class="before">
+                <h3>Before</h3>
+                <img src="before-image.jpg" alt="Before">
+            </div>
+            <div class="after">
+                <h3>After</h3>
+                <img src="after-image.jpg" alt="After">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
