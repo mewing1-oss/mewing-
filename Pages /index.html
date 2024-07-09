@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achieve Your Best Look with Our Ultimate Face Care System for Boys</title>
+    <title>Face Care System for Boys</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,26 +62,6 @@
             document.getElementById('payment-section').classList.remove('hidden');
             document.getElementById('payment-section').classList.add('visible');
         }
-
-        function handlePayment(event) {
-            event.preventDefault();
-            var form = event.target;
-            var button = form.querySelector('input[type="image"]');
-            button.disabled = true;
-
-            // Simulate a successful payment
-            setTimeout(function() {
-                form.submit();
-                showDownload();
-            }, 2000);
-        }
-
-        function showDownload() {
-            document.getElementById('payment-section').classList.remove('visible');
-            document.getElementById('payment-section').classList.add('hidden');
-            document.getElementById('download-section').classList.remove('hidden');
-            document.getElementById('download-section').classList.add('visible');
-        }
     </script>
 </head>
 <body>
@@ -99,7 +79,7 @@
         <div class="images">
             <div class="before">
                 <h3>Before</h3>
-                <img src="Before .PNG" alt="Before">
+                <img src="Before.PNG" alt="Before">
             </div>
             <div class="after">
                 <h3>After</h3>
@@ -121,18 +101,17 @@
     <h2>Payment Required</h2>
     <p>You need to pay $2 to download the guide.</p>
 
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="handlePayment(event)">
-        <input type="hidden" name="cmd" value="_s-xclick" />
-        <input type="hidden" name="hosted_button_id" value="B5G98XE5DKQPL" />
-        <input type="hidden" name="currency_code" value="USD" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" class="paypal-button" />
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="yassinelamachi16@gmail.com">
+        <input type="hidden" name="item_name" value="Face Care System for Boys">
+        <input type="hidden" name="amount" value="2.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="return" value="https://mewing1-oss.github.io/mewing-/success.html">
+        <input type="hidden" name="cancel_return" value="https://mewing1-oss.github.io/mewing-/cancel.html">
+        <input type="hidden" name="notify_url" value="https://mewing1-oss.github.io/mewing-/ipn.php">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" class="paypal-button">
     </form>
-</section>
-
-<section id="download-section" class="content hidden">
-    <h2>Payment Successful</h2>
-    <p>Thank you for your payment. You can now download your guide.</p>
-    <a href="Download/Face-care.pdf" class="download-button" download>Download Now</a>
 </section>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
