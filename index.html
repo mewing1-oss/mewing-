@@ -27,7 +27,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
         }
-        .paypal-button, .instagram-button {
+        .paypal-button, .instagram-button, .download-button {
             margin-top: 20px;
         }
         .images {
@@ -50,10 +50,24 @@
         .social-buttons a {
             margin: 0 10px;
         }
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
     </style>
     <script>
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        function showPayment() {
+            document.getElementById('payment-section').classList.remove('hidden');
+            document.getElementById('payment-section').classList.add('visible');
+        }
+
+        function showDownload() {
+            document.getElementById('payment-section').classList.remove('visible');
+            document.getElementById('payment-section').classList.add('hidden');
+            document.getElementById('download-section').classList.remove('hidden');
+            document.getElementById('download-section').classList.add('visible');
         }
     </script>
 </head>
@@ -68,19 +82,11 @@
     <div class="content">
         <h2>Transform Your Appearance with Our Comprehensive Guide</h2>
         <p>Unlock the secrets to a better facial structure and healthier skin with our all-inclusive Face Care System. Designed specifically for boys, our guide provides effective exercises, tailored diet plans, and expert care routines to help you look and feel your best. Transform your appearance and boost your confidence with our proven methods.</p>
-        <p><strong>Get started today for just $2!</strong></p>
-
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="hosted_button_id" value="B5G98XE5DKQPL" />
-            <input type="hidden" name="currency_code" value="USD" />
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" class="paypal-button" />
-        </form>
 
         <div class="images">
             <div class="before">
                 <h3>Before</h3>
-                <img src="Before .PNG" alt="Before">
+                <img src="Before.PNG" alt="Before">
             </div>
             <div class="after">
                 <h3>After</h3>
@@ -93,7 +99,27 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="50" height="50">
             </a>
         </div>
+
+        <button class="download-button" onclick="showPayment()">Download Now</button>
     </div>
+</section>
+
+<section id="payment-section" class="content hidden">
+    <h2>Payment Required</h2>
+    <p>You need to pay $2 to download the guide.</p>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="showDownload()">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="B5G98XE5DKQPL" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" class="paypal-button" />
+    </form>
+</section>
+
+<section id="download-section" class="content hidden">
+    <h2>Payment Successful</h2>
+    <p>Thank you for your payment. You can now download your guide.</p>
+    <a href="Face-care.pdf" class="download-button" download>Download Now</a>
 </section>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
