@@ -25,7 +25,10 @@
         }
         .images img {
             max-width: 100%;
+            width: 80%; /* تصغير عرض الصور إلى 80% من العرض الأصلي */
             border-radius: 10px;
+            display: block;
+            margin: 0 auto;
         }
         .purchase {
             text-align: center;
@@ -57,11 +60,11 @@
     <div class="row">
         <div class="col-md-6 images">
             <h2>Before</h2>
-            <img src="Before .PNG" alt="Before">
+            <img src="Before.PNG" alt="Before" loading="lazy">
         </div>
         <div class="col-md-6 images">
             <h2>After</h2>
-            <img src="After.PNG" alt="After">
+            <img src="After.PNG" alt="After" loading="lazy">
         </div>
     </div>
     <div class="row mt-4">
