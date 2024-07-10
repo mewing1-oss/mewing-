@@ -25,7 +25,7 @@
         }
         .images img {
             max-width: 100%;
-            width: 60%; /* تصغير عرض الصور إلى 60% من العرض الأصلي */
+            width: 60%;
             border-radius: 10px;
             display: block;
             margin: 0 auto;
@@ -34,10 +34,32 @@
             text-align: center;
             margin: 40px 0;
         }
+        .btn-custom {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .dropdown-menu {
+            min-width: auto;
+        }
     </style>
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
     </script>
 </head>
@@ -53,6 +75,7 @@
         <h1 class="display-4">Achieve a Defined Jawline with Our System</h1>
         <p class="lead">Transform your face with our comprehensive care system. Includes exercises, dietary plans, and tips for a sharper, more defined jawline.</p>
         <a href="https://www.instagram.com/facem_ew?igsh=MWhsa215MGtsZGM2eg==" class="btn btn-outline-light btn-lg">Follow us on Instagram</a>
+        <a href="https://t.me/FaceFitnessFormula" class="btn btn-outline-light btn-lg">Join us on Telegram</a>
     </div>
 </section>
 
@@ -94,7 +117,7 @@
         <input type="hidden" name="cmd" value="_s-xclick" />
         <input type="hidden" name="hosted_button_id" value="B5G98XE5DKQPL" />
         <input type="hidden" name="currency_code" value="USD" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+        <button type="submit" class="btn-custom">Pay with PayPal</button>
     </form>
 </div>
 
