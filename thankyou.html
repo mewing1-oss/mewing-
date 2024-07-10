@@ -27,15 +27,33 @@
 
 <div class="container thankyou">
     <h1>Thank You for Your Purchase!</h1>
-    <p>Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at <a href="https://www.paypal.com" target="_blank">www.paypal.com</a> to view details of this transaction.</p>
-    <div class="download-link">
-        <a href="download/Face care.pdf" class="btn btn-success btn-lg" download>Download Your Face Care Guide</a>
+    <div id="content">
+        <p>Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at <a href="https://www.paypal.com" target="_blank">www.paypal.com</a> to view details of this transaction.</p>
+        <div class="download-link">
+            <a id="download" href="#" class="btn btn-success btn-lg" style="display:none;" download>Download Your Face Care Guide</a>
+        </div>
+    </div>
+    <div id="error" style="display:none;">
+        <p>Please complete the payment to access the download link.</p>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Verify payment via AJAX
+    fetch('check_payment.php?txn_id=' + new URLSearchParams(window.location.search).get('txn_id'))
+        .then(response => response.json())
+        .then(data => {
+            if (data.verified) {
+                document.getElementById('download').style.display = 'block';
+            } else {
+                document.getElementById('content').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            }
+        });
+</script>
 
 </body>
 </html>
