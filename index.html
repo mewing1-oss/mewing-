@@ -66,12 +66,21 @@
             width: 100%;
             bottom: 0;
         }
+        #google_translate_element {
+            margin: 20px 0;
+        }
     </style>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
     <header>
         <h1>Mewing Facial Care System</h1>
-        <a href="?lang=ar" class="button translation-button">Translate to Arabic</a>
+        <div id="google_translate_element"></div>
     </header>
     <main>
         <div class="content">
