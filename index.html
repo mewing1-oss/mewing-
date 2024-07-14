@@ -77,6 +77,14 @@
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            lazyImages.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -90,8 +98,8 @@
 
             <div class="images">
                 <h3>Before and After</h3>
-                <img src="Before%20.PNG" alt="Before Picture">
-                <img src="After.PNG" alt="After Picture">
+                <img data-src="Before%20.PNG" alt="Before Picture" loading="lazy">
+                <img data-src="After.PNG" alt="After Picture" loading="lazy">
             </div>
             
             <h3>Mewing</h3>
